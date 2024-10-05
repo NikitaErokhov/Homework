@@ -35,6 +35,11 @@ size_t DynamicArr::capacity() const {
 	return capacity_;
 }
 
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            Домашнее задание на 05_10_24
+                            Выполнил Ерохов Никита М.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 int DynamicArr::operator [](int index){
 	return this->arr_[index];
 }
@@ -49,19 +54,13 @@ DynamicArr& DynamicArr::operator = (const DynamicArr &otherarr) {
 	for(int i = 0; i<this->size_;++i){
 		this->arr_[i] = otherarr.arr_[i];
 	}
+	return *this;
 }
-void DynamicArr::push_back(double elem) {
-	if (size_ == capacity_) {
-		capacity_ = coeff_ * capacity_;
-		double* tmp = new double[capacity_];
-		for (size_t i = 0; i < size_; ++i) {
-			tmp[i] = arr_[i];
-		}
-		delete[] arr_;
-		arr_ = tmp;
-	}
-	arr_[size_++] = elem;
-}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            Домашнее задание на 05_10_24
+                            Выполнил Ерохов Никита М.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 void DynamicArr::push_back(double elem) {
 	if (size_ == capacity_) {
